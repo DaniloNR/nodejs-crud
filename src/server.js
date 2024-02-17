@@ -4,13 +4,13 @@ import { routes } from "./routes.js";
 
 const server = http.createServer(async (req, res) => {
   const { method, url } = req;
-
   await json(req, res);
-
-  const route = routes[method][url];
+  const route = routes[method].find((route) => route.path.test(url));
 
   if (route) {
-    return route(req, res);
+    const routeParams = req.url.match(route.path);
+    req.params = { ...routeParams.groups };
+    return route.handler(req, res);
   }
 
   return res.writeHead(404).end();
