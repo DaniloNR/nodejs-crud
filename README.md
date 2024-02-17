@@ -35,8 +35,20 @@ pnpm run dev
 ## Endpoints
 
 - **GET /users**: Get all users
-- **GET /users?search=**: Get all users containing the the query string
+- **GET /users?search={text}**: Get all users containing the the query string
 - **GET /users/{id}**: Get user by ID
 - **POST /users**: Create a new user
 - **PUT /users/{id}**: Update user by ID
 - **DELETE /users/{id}**: Delete user by ID
+
+The server starts on [http://localhost:3333](http://localhost:3333)
+
+## 📖 License
+
+[MIT License](http://zenorocha.mit-license.org/) © Danilo Nogueira
+
+## 🤝 Open Source
+
+Feel free to clone this repo and use the way you want it!
+
+I'm open to new ideas or suggestions, and I will try to implement those here.
